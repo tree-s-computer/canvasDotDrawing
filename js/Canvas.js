@@ -6,7 +6,10 @@ class Canvas {
     this.canvas = document.createElement('canvas');
     this.copyCanvas = document.createElement('canvas');
     this.ctx = this.canvas.getContext('2d');
-    this.copyCtx = this.copyCanvas.getContext('2d', { alpha: false });
+    this.copyCtx = this.copyCanvas.getContext('2d', {
+      alpha: false,
+      willReadFrequently: true,
+    });
     this.speedInput = document.getElementById('autoSpeed');
     //컨트롤 부분 height
     const controller = document.querySelector('.controller');
